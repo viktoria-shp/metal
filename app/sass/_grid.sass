@@ -1,0 +1,29 @@
+@import "_vars"
+.column
+  @each $point in $points
+    &-#{$point}
+      @each $column in $columns
+        &-#{$column}
+          padding: 0 $gutter/2
+          width: 100%
+.column
+  @each $point in $points
+    +breakpoint($point)
+      &-#{$point}
+        @each $column in $columns
+          &-#{$column}
+            $percents: percentage(number(str-slice($column,1,1)) / number(str-slice($column,3,3)))
+            max-width: $percents
+.test-clas__function
+  margin: (number($test))
+.wrapper
+  margin: 0 auto
+  max-width: 1000px
+.row
+  display: flex
+  flex-wrap: wrap
+[class*="column"]
+  width: 100%
+
+
+     

@@ -1,0 +1,26 @@
+.wrapper
+  .row
+    .header
+      .header__top
+        i(class="fas fa-home")
+        i(class="far fa-envelope")
+        i(class="fas fa-network-wired")
+      .header__content
+        .logo
+          img(src="img/logo.png")
+          p(class="text") Первая Металлоломная Компания
+        .menu-opener
+          a(href="#")
+            i(class="fas fa-bars")
+        .menu
+          -
+            var menu = [
+              "Главная", 
+              "О компании", 
+              "Цени", 
+              "Контакты"
+              ];
+          ul
+            each item in menu
+              li
+                a(href="#") #{item}
